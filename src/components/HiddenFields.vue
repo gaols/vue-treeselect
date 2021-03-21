@@ -25,6 +25,8 @@
         stringifiedValues.join(instance.delimiter),
       ]
 
+      console.log('instance.name is:', instance.name)
+      console.log('stringified values is:', JSON.stringify(stringifiedValues))
       return stringifiedValues.map((stringifiedValue, i) => (
         <input type="hidden"
           name={instance.name}

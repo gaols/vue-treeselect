@@ -8,6 +8,7 @@
   </head>
   <body>
     <div id="app">
+      <input type="button" @click="loadOptions" value="click" class="mb10"/>
       <treeselect v-model="value" :multiple="false" :options="options" />
     </div>
   </body>
@@ -19,26 +20,36 @@
       el: '#app',
       data: {
         // define the default value
-        value: '1234567',
+        value: 'a',
         // define options
-        options: [ {
-          id: 'a',
-          label: 'a',
-          children: [ {
-            id: 'aa',
-            label: 'aa',
-          }, {
-            id: 'ab',
-            label: 'ab',
-          } ],
-        }, {
-          id: 'b',
-          label: 'b',
-        }, {
-          id: 'c',
-          label: 'c',
-        } ],
+        options: [],
       },
+      methods: {
+        loadOptions() {
+          this.options = [{
+            id: 'a',
+            label: 'a',
+            children: [ {
+              id: 'aa',
+              label: 'aa',
+            }, {
+              id: 'ab',
+              label: 'ab',
+            } ],
+          }, {
+            id: 'b',
+            label: 'b',
+          }, {
+            id: 'c',
+            label: 'c',
+          }]
+        }
+      }
     })
   </script>
+<style>
+  .mb10 {
+    margin-bottom: 10px;
+  }
+</style>
 </html>
